@@ -1,0 +1,2 @@
+richenum>=1.0.4
+normalize>=0.7.4
