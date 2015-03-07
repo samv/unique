@@ -1,0 +1,29 @@
+
+* 0.1 milestones
+- [ ] read object (random)
+- [ ] create object
+- [ ] update object
+- [ ] delete object
+- [ ] scan objects by range
+
+* 0.2 milestones
+- [ ] REST API
+- [ ] socket API
+
+* 0.3 milestones
+- [ ] transactions
+
+* 0.4 milestones
+- [ ] partitions (fixed sharding with no cross-shard transactions)
+
+* 1.0 or earlier Milestones
+- [ ] transactions crossing shards
+- [ ] shard replication
+- [ ] eventual consistency rules
+- [ ] disconnected operation
+
+* Post-1.0 milestones
+- [ ] decentralized trust mode
+- [ ] client-specified schema
+- [ ] automatic sharding
+
