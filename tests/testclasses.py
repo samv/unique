@@ -14,5 +14,3 @@ class MultiLevelKeyValue(Record):
     primary_key = [key]
     items = Property(list_of=SimpleKeyValue)
     custom_val = Property(json_name="custval")
-
-

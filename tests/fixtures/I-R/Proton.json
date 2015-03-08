@@ -1,0 +1,14 @@
+{
+    "custval": "t",
+    "items": [
+        {
+            "key": "toast",
+            "value": "Linus"
+        },
+        {
+            "key": "sausage",
+            "value": "Sally"
+        }
+    ],
+    "key": "Proton"
+}

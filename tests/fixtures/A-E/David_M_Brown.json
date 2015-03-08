@@ -1,0 +1,22 @@
+{
+    "custval": "e",
+    "items": [
+        {
+            "key": "lobster",
+            "value": "Charlie_Brown"
+        },
+        {
+            "key": "eggs",
+            "value": "Pigpen"
+        },
+        {
+            "key": "ham",
+            "value": "Marcie"
+        },
+        {
+            "key": "tomato",
+            "value": "Charlie_Brown"
+        }
+    ],
+    "key": "David_M_Brown"
+}

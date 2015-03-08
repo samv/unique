@@ -1,0 +1,22 @@
+{
+    "custval": "r",
+    "items": [
+        {
+            "key": "sausage",
+            "value": "Franklin"
+        },
+        {
+            "key": "spam",
+            "value": "Snoopy"
+        },
+        {
+            "key": "sausage",
+            "value": "Lucy"
+        },
+        {
+            "key": "sausage",
+            "value": "Franklin"
+        }
+    ],
+    "key": "N_1"
+}

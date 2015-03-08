@@ -1,0 +1,22 @@
+{
+    "custval": "r",
+    "items": [
+        {
+            "key": "herring",
+            "value": "Snoopy"
+        },
+        {
+            "key": "bacon",
+            "value": "Snoopy"
+        },
+        {
+            "key": "herring",
+            "value": "Pigpen"
+        },
+        {
+            "key": "sausage",
+            "value": "Pigpen"
+        }
+    ],
+    "key": "Christa_McAuliffe"
+}

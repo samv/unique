@@ -8,7 +8,8 @@ store, given a suitably lax storage schema.  But its goal is to be a
 useful first normal form (1NF) store.
 
 This is currently in very early stages of development.  Please contact
-the author or send pull requests if you want to get involved!
+the author or send pull requests if you want to get involved!  See
+TODO.org for the roadmap.
 
 Project License
 ---------------

@@ -1,0 +1,18 @@
+{
+    "custval": "L",
+    "items": [
+        {
+            "key": "herring",
+            "value": "Snoopy"
+        },
+        {
+            "key": "sausage",
+            "value": "Lucy"
+        },
+        {
+            "key": "truffle",
+            "value": "Linus"
+        }
+    ],
+    "key": "Columbia"
+}

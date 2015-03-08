@@ -1,0 +1,22 @@
+{
+    "custval": "l",
+    "items": [
+        {
+            "key": "herring",
+            "value": "Schroeder"
+        },
+        {
+            "key": "eggs",
+            "value": "Peppermint_Patty"
+        },
+        {
+            "key": "ham",
+            "value": "Marcie"
+        },
+        {
+            "key": "herring",
+            "value": "Charlie_Brown"
+        }
+    ],
+    "key": "Veronique"
+}

@@ -1,0 +1,22 @@
+{
+    "custval": "r",
+    "items": [
+        {
+            "key": "shrubbery",
+            "value": "Snoopy"
+        },
+        {
+            "key": "lobster",
+            "value": "Sally"
+        },
+        {
+            "key": "toast",
+            "value": "Peppermint_Patty"
+        },
+        {
+            "key": "tomato",
+            "value": "Charlie_Brown"
+        }
+    ],
+    "key": "Centaur"
+}

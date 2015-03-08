@@ -1,0 +1,22 @@
+{
+    "custval": "d",
+    "items": [
+        {
+            "key": "tomato",
+            "value": "Marcie"
+        },
+        {
+            "key": "beans",
+            "value": "Rerun"
+        },
+        {
+            "key": "herring",
+            "value": "Franklin"
+        },
+        {
+            "key": "eggs",
+            "value": "Charlie_Brown"
+        }
+    ],
+    "key": "Rick_D_Husband"
+}

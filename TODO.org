@@ -1,19 +1,21 @@
 
 * 0.1 milestones
-- [ ] read object (random)
+- [X] read object (random)
+- [X] scan objects by range
+
+* 0.2 milestones
 - [ ] create object
 - [ ] update object
 - [ ] delete object
-- [ ] scan objects by range
 
-* 0.2 milestones
+* 0.3 milestones
 - [ ] REST API
 - [ ] socket API
 
-* 0.3 milestones
+* 0.4 milestones
 - [ ] transactions
 
-* 0.4 milestones
+* 0.5 milestones
 - [ ] partitions (fixed sharding with no cross-shard transactions)
 
 * 1.0 or earlier Milestones
