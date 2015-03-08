@@ -1,0 +1,18 @@
+{
+    "custom_val": "Minotaur",
+    "items": [
+        {
+            "key": "toast",
+            "value": "Charlie_Brown"
+        },
+        {
+            "key": "ham",
+            "value": "Lucy"
+        },
+        {
+            "key": "spam",
+            "value": "Franklin"
+        }
+    ],
+    "key": "Casper"
+}

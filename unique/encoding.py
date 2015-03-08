@@ -63,7 +63,14 @@ class JSONRecordIO(VisitorPattern):
     @classmethod
     def decode_str(cls, record_type, data):
         json_data = json.loads(data)
-        return cls.cast(record_type, json_data)
+        if isinstance(json_data, list) and not isinstance(
+            record_type, Collection,
+        ):
+            return [
+                cls.cast(record_type, x) for x in json_data
+            ]
+        else:
+            return [cls.cast(record_type, json_data)]
 
     @classmethod
     def decode_many_str(cls, record_type, data):

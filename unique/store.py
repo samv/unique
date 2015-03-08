@@ -4,6 +4,9 @@ from abc import ABCMeta
 from abc import abstractmethod
 from abc import abstractproperty
 
+from normalize import Property
+from normalize.identity import record_id
+
 from unique.encoding import JSONRecordIO
 
 
@@ -21,7 +24,7 @@ class Store(object):
     Subclasses can override a data visitor for marshaling.
     """
     __meta__ = ABCMeta
-    encoding = JSONRecordEncoding
+    encoding = JSONRecordIO
 
     @abstractproperty
     def oid(self):
@@ -98,12 +101,21 @@ class MutableStore(Store):
 class Page(Store):
     """A page is a single file in the git repo, which may contain one or more
     rows."""
+    record_type = Property(isa=type)
 
     def __init__(self, record_type, git_object=None, rows=None):
         self.record_type = record_type
         self.git_object = git_object
-        self.rows = rows
+        self._rowdata = rows
 
     @classmethod
     def from_gitobject(self, record_type, git_object, prefix=None):
         return Page(record_type, git_object=git_object)
+
+    def scan(self):
+        if not self._rowdata:
+            self._rowdata = self.encoding.decode_str(
+                self.record_type, self.git_object.data_stream.read()
+            )
+        for v in self._rowdata:
+            yield record_id(v), v

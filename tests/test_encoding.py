@@ -11,6 +11,9 @@ from normalize import to_json
 
 from unique.encoding import JSONRecordIO
 
+from testclasses import MultiLevelKeyValue
+from testclasses import SimpleKeyValue
+
 
 def jdump(obj):
     return json.dumps(
@@ -19,17 +22,6 @@ def jdump(obj):
         separators=(',', ': '),
         sort_keys=True,
     )
-
-
-class SimpleKeyValue(Record):
-    key = Property()
-    value = Property()
-
-
-class MultiLevelKeyValue(Record):
-    key = Property()
-    items = Property(list_of=SimpleKeyValue)
-    custom_val = Property(json_name="custval")
 
 
 class CustomMarshalled(JsonRecord):
@@ -58,7 +50,7 @@ class SanityTest(unittest2.TestCase):
             encoded, '{\n    "key": "Bob",\n    "value": "bill"\n}',
         )
 
-        decoded = JSONRecordIO.decode_str(SimpleKeyValue, encoded)
+        decoded = JSONRecordIO.decode_str(SimpleKeyValue, encoded)[0]
         self.assertEqual(sk, decoded)
 
     def test_multi_level_key(self):
@@ -76,8 +68,8 @@ class SanityTest(unittest2.TestCase):
         self.assertEqual(mlkv, default_decoded)
 
         encoded = JSONRecordIO.encode_str(mlkv)
-        decoded = JSONRecordIO.decode_str(MultiLevelKeyValue, encoded)
-        # FIXME: visitor should respect all JsonRecord hints
+        decoded = JSONRecordIO.decode_str(MultiLevelKeyValue, encoded)[0]
+        # FIXME: visitor should either respect all JsonRecord hints or none.
         decoded.custom_val = 'Minotaur'
         self.assertEqual(mlkv, decoded)
 
