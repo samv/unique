@@ -106,7 +106,9 @@ class Page(Store):
     def __init__(self, record_type, git_object=None, rows=None):
         self.record_type = record_type
         self.git_object = git_object
-        self._rowdata = rows
+        self._rowdata = dict(
+            (record_id(v), v) for v in rows
+        ) if rows is not None else None
 
     @classmethod
     def from_gitobject(self, record_type, git_object, prefix=None):
@@ -114,8 +116,15 @@ class Page(Store):
 
     def scan(self):
         if not self._rowdata:
-            self._rowdata = self.encoding.decode_str(
-                self.record_type, self.git_object.data_stream.read()
+            self._rowdata = dict(
+                (record_id(v), v) for v in
+                self.encoding.decode_str(
+                    self.record_type, self.git_object.data_stream.read()
+                )
             )
-        for v in self._rowdata:
-            yield record_id(v), v
+        return self._rowdata.items()
+
+    def get(self, k):
+        if not self._rowdata:
+            self.scan()
+        return self._rowdata[k]

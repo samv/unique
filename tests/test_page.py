@@ -7,6 +7,7 @@ import unittest2
 import git
 from normalize import Property
 from normalize import Record
+from normalize.identity import record_id
 
 from unique.store import Page
 
@@ -60,3 +61,4 @@ class TestPage(unittest2.TestCase):
             seen[key] = row
 
         self.assertEqual(len(seen), 1)
+        self.assertEqual(page.get(key), row)
