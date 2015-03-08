@@ -23,8 +23,8 @@ setup(
     long_description=long_description,
     name='unique',
     packages=find_packages(),
-    install_requires=('richenum>=1.0.0', 'normalize>=0.7.4'),
+    install_requires=('richenum>=1.0.0', 'normalize>=0.7.4', "GitPython>=0.3.6"),
     test_suite="run_tests",
-    version='0.0.1',
+    version='0.1',
     url="http://github.io/samv/unique",
 )
