@@ -1,6 +1,7 @@
 
 import json
 
+from normalize.coll import Collection
 from normalize.visitor import VisitorPattern
 
 

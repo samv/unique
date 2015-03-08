@@ -98,25 +98,30 @@ class MutableStore(Store):
         pass
 
 
-class Page(Store):
-    """A page is a single file in the git repo, which may contain one or more
-    rows."""
+class GitStore(Store):
     record_type = Property(isa=type)
 
-    def __init__(self, record_type, git_object=None, rows=None):
+    def __init__(self, record_type, git_object=None, prefix=()):
         self.record_type = record_type
         self.git_object = git_object
-        self._rowdata = dict(
-            (record_id(v), v) for v in rows
-        ) if rows is not None else None
+        self.prefix = ()
+
+
+class Page(GitStore):
+    """A page is a single file in the git repo, which may contain one or more
+    rows."""
+    def __init__(self, *a, **kw):
+        super(Page, self).__init__(*a, **kw)
+        self._rowdata = None
+        self._range = None
 
     @classmethod
-    def from_gitobject(self, record_type, git_object, prefix=None):
-        return Page(record_type, git_object=git_object)
+    def from_gitobject(self, record_type, git_object, prefix=()):
+        return Page(record_type, git_object=git_object, prefix=())
 
     def scan(self):
         if not self._rowdata:
-            self._rowdata = dict(
+            self._rowdata = OrderedDict(
                 (record_id(v), v) for v in
                 self.encoding.decode_str(
                     self.record_type, self.git_object.data_stream.read()

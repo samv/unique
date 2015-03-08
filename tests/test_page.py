@@ -62,3 +62,20 @@ class TestPage(unittest2.TestCase):
 
         self.assertEqual(len(seen), 1)
         self.assertEqual(page.get(key), row)
+
+    def test_multi_page_read(self):
+        page = Page.from_gitobject(
+            MultiLevelKeyValue, self.files['Scout-Start.json'],
+        )
+        seen = dict()
+        last_key = None
+        for key, row in page.scan():
+            self.assertIsInstance(key, tuple)
+            if last_key is not None:
+                self.assertGreater(key, last_key)
+            last_key = key
+            self.assertIsInstance(row, MultiLevelKeyValue)
+            self.assertNotIn(key, seen)
+            seen[key] = row
+
+        self.assertEqual(len(seen), 4)
